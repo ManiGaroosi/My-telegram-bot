@@ -1,6 +1,6 @@
 import telebot
 
-bot = telebot.TeleBot("6367336233:AAHvWSDhGbJ0lgt1BEM7IIxW0OauWHLDYwk")
+bot = telebot.TeleBot("5865831239:AAFj-XiJIUJkvT1m-Apyv3ZybTnPf8FQTUw")
 
 mainKeyboard= telebot.types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
 mainKeyboard.add('بسته های موجود🛍','خرید بسته🛒','پشتیبانی📞','استعلام حجم باقی مانده🔋','دانلود برنامه📥')
@@ -55,6 +55,14 @@ def main_ketboard(message):
 Join us: 《@unlimitedinternetIR》
 """)
         elif message.text == 'استعلام حجم باقی مانده🔋':
-            bot.send_message(message.chat.id, "/confinfo")
+            bot.send_message(message.chat.id, "بزودی فعال می شود")
+
+        elif message.text == 'دانلود برنامه📥':
+            btn1 = telebot.types.InlineKeyboardButton("دانلود v2rayNG برنامه اندروید", url='https://t.me/unlimitedinternetIR/14')
+            btn2 = telebot.types.InlineKeyboardButton("دانلود برنامه V2raN ویندوز", url='https://t.me/unlimitedinternetIR/77')
+            markup = telebot.types.InlineKeyboardMarkup()
+            markup.add(btn1,btn2)
+            bot.send_message(message.chat.id, "طبق سیستم عمال مورد نظر خود برنامه را دانلود کنید (سیستم عامل ایفون باید از خود اپل استور دانلود شود)",reply_markup=markup)
+             
 
 bot.infinity_polling()
